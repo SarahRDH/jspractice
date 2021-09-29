@@ -57,10 +57,42 @@ function isPangram(words) {
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
     for (let char of alphabet) {       
         if (lowerWords.indexOf(char) === -1) {
-            console.log(char); //this prints the missing letters! I didn't mean for it too, but it does...
+            console.log(char); //this prints some of the missing letters! I didn't mean for it too, but it does...
             return false;
+        //if (!lowerWords.includes(char)) {
+            //return false;
+       //}
         }
     }
     return true;
 }
+
+function pick(arr) {
+    const idx = Math.floor(Math.random() * arr.length);
+    return arr[idx];
+}
+
+//another way to write getCard using a helper function so we don't have to duplicate code
+function getCard() {
+    const myValue = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q'];
+    const value = pick(myValue);
+
+    const mySuit = ['clubs', 'hearts', 'diamonds', 'spades'];
+    const suit = pick(mySuit);
+
+    return {value: value, suit: suit};
+}
+
+// function getCard() {
+//     const myValue = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q'];
+//     const valIdx = Math.floor(Math.random() * myValue.length);
+//     const value = myValue[valIdx];
+
+//     const mySuit = ['clubs', 'hearts', 'diamonds', 'spades'];
+//     const suitIdx = Math.floor(Math.random() * mySuit.length);
+//     const suit = mySuit[suitIdx];
+
+//    return {value: value, suit: suit};
+// }
+
 
